@@ -1,6 +1,5 @@
 package br.com.fiap.biblioteca.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.websocket.server.PathParam;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.fiap.biblioteca.model.AutoresVo;
+import br.com.fiap.businessdelegate.AutoresBusinessDelegate;
 
 @Controller
 @RequestMapping(value = "/v2/alunos")
@@ -20,7 +20,7 @@ public class AutoresRest {
 
 	@GetMapping()
 	public List<AutoresVo> obterListAutores() {
-		return new ArrayList<>();
+		return AutoresBusinessDelegate.getInstance().obterListAutores();
 	}
 
 	@GetMapping()
