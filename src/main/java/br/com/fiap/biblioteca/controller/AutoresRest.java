@@ -1,5 +1,6 @@
 package br.com.fiap.biblioteca.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.websocket.server.PathParam;
@@ -19,7 +20,7 @@ import br.com.fiap.businessdelegate.AutoresBusinessDelegate;
 public class AutoresRest {
 
 	@GetMapping()
-	public List<AutoresVo> obterListAutores() {
+	public List<AutoresVo> obterListAutores() throws SQLException {
 		return AutoresBusinessDelegate.getInstance().obterListAutores();
 	}
 

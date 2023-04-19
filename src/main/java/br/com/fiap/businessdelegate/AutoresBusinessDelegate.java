@@ -1,9 +1,10 @@
 package br.com.fiap.businessdelegate;
 
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.List;
 
 import br.com.fiap.biblioteca.model.AutoresVo;
+import br.com.fiap.businessdelegate.dao.AutoresDAOANSI;
 
 public class AutoresBusinessDelegate {
 
@@ -20,9 +21,8 @@ public class AutoresBusinessDelegate {
 		}
 	}
 	
-	public List<AutoresVo> obterListAutores() {
-		return new ArrayList<>();
+	public List<AutoresVo> obterListAutores() throws SQLException {
+		return AutoresDAOANSI.getInstance().obterListAutores();
 	}
-	//AutoresSessionFacadeLocal autoreSsessionLocal;
 	
 }
